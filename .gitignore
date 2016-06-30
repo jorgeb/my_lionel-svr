@@ -1,0 +1,7 @@
+node_modules
+dist
+logs
+typings
+src/server/img
+npm-debug.log
+test.sh
