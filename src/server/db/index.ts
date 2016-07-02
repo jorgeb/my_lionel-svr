@@ -8,6 +8,8 @@ import auctionItems = require('./repos/auction_items');
 import auctions = require('./repos/auctions');
 import lionelItems = require('./repos/lionel_items');
 import lionelTenders = require('./repos/lionel_tenders');
+import myLionelBoxes = require('./repos/my_boxes');
+import myLionelImages = require('./repos/my_lionel_images');
 
 interface IExtensions {
     users:users.Repository,
@@ -16,7 +18,9 @@ interface IExtensions {
     auctionItems:auctionItems.Repository,
     auctions:auctions.Repository,
     lionelItems:lionelItems.Repository,
-    lionelTenders:lionelTenders.Repository
+    lionelTenders:lionelTenders.Repository,
+    myLionelBoxes:myLionelBoxes.Repository,
+    myLionelImages:myLionelImages.Repository
 }
 
 // pg-promise initialization options:
@@ -36,6 +40,9 @@ var options = {
         obj.auctions = new auctions.Repository(obj);
         obj.lionelItems = new lionelItems.Repository(obj);
         obj.lionelTenders = new lionelTenders.Repository(obj);
+        obj.myLionelBoxes = new myLionelBoxes.Repository(obj);
+        obj.myLionelImages = new myLionelImages.Repository(obj);
+        
     }
 };
 

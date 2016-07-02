@@ -9,9 +9,11 @@ import { auctioneerItemRouter } from './api/auction_item/auction_item.route';
 import { ambrosebaueItemRouter } from './api/ambrosebauer/ambrosebauer-router';
 import { imageAuctionRouter } from './api/image_manager/image_auction.route';
 import { imageLionelRouter } from './api/image_manager/image_lionel.route'; 
+import { imageMyLionelRouter } from './api/image_manager/image_my_lionel.route';
 import { tandemParserRouter } from './api/tandem/tandem.router';
 import { lionelParserRouter } from './api/lionel/lionel.route';
-
+import { mylionelUploadedParserRouter } from './api/my_lionel/my_lionel.route';
+ 
 const app = express();
 
 var bodyParser = require('body-parser');
@@ -33,11 +35,13 @@ app.use('/api/auction_item/', auctioneerItemRouter);
 
 app.use('/img/auction/', imageAuctionRouter);
 app.use('/img/lionel/', imageLionelRouter);
+app.use('/img/my_lionel/', imageMyLionelRouter);
 
 //app.use('/api/auction/', require('./api/auction'));
 app.use('/api/ambrosebauer/', ambrosebaueItemRouter);
 app.use('/api/tandem/', tandemParserRouter);
 app.use('/api/lionel/', lionelParserRouter);
+app.use('/api/my_lionel/', mylionelUploadedParserRouter);
 
 app.use('/', serveStatic(PUBLIC_DIR));
 app.use('/', ngRouter);

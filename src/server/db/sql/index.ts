@@ -72,5 +72,10 @@ export = {
     empty: sql('products/empty.sql'),
     drop: sql('products/drop.sql'),
     add: sql('products/add.sql')
+  },
+  my_boxes: {
+    update: sql('my_lionel/update_box.sql'),
+    add: sql('my_lionel/add_box.sql')
   }
+
 };
