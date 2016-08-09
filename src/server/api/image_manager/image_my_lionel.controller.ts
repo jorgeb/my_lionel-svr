@@ -13,17 +13,27 @@ export class ImageMyLionelController {
 
   };
 
-  public findStockImage = () => {
+  public findStockImage = (isSquare:boolean) => {
 
     let imlu = new ImageMyLionelUtil();
 
-    return imlu.getImage(this.req.params.fileName,
-      this.req.params.width,
-      this.req.params.height).then( data => {
+    if(isSquare){
       
-      this.res.sendFile(data, { root: 'src/server/img/my_lionel_cache' });
-    });
-
+      return imlu.getSquareImage(this.req.params.fileName,
+        this.req.params.width).then( data => {
+        
+        this.res.sendFile(data, { root: 'src/server/img/my_lionel_cache' });
+      });
+      
+    }else {
+      return imlu.getImage(this.req.params.fileName,
+        this.req.params.width,
+        this.req.params.height).then( data => {
+        
+        this.res.sendFile(data, { root: 'src/server/img/my_lionel_cache' });
+      });
+    }
   };
-
+  
+ 
 }

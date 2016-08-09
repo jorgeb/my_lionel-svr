@@ -44,4 +44,13 @@ export class Repository {
      return this.db.one(sql.add, toSave);
   };
 
+/*
+
+SELECT * FROM my_lionel_items mli
+INNER JOIN lionel_items li on li.id = mli.lionel_id
+INNER JOIN my_lionel_images mlii ON mlii.my_lionel_items_id = mli.id
+    LEFT JOIN my_extended_tender met on met.my_lionel_items_id = mli.id
+    where ((false IS NULL) OR ((false AND (met.my_lionel_items_id IS NOT NULL)) OR (NOT false AND (met.my_lionel_items_id IS NULL))))
+and li.lionel_type_id = 21
+ */
 }

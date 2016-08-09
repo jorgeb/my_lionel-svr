@@ -268,3 +268,16 @@ https://developers.google.com/apis-explorer/?hl=en_US#p/customsearch/v1/
 
 002586204953238386063:bsjkysauzy0
 http://cse.google.com/manage/all
+
+
+crop and get info histogram from image
+convert test.jpg  -gravity center  -crop 65% -dither None -colors 16 -depth 8 -format "%c" histogram:info:- | sort -n -r | head -n 20
+
+return img.noProfile().bitdepth(8).colors(8).write('histogram:' + tmpFilename, function (err)
+
+
+
+orge@jorge-desktop ~/dev/hwf/lionel/stock/lv-server-uni/src/server/db/c_function $ cc -I/usr/include/postgresql/9.3/server  -fpic -c CIEDE2000.c
+jorge@jorge-desktop ~/dev/hwf/lionel/stock/lv-server-uni/src/server/db/c_function $ cc -I/usr/include/postgresql/9.3/server  -fpic -c CIEDE2000.c
+jorge@jorge-desktop ~/dev/hwf/lionel/stock/lv-server-uni/src/server/db/c_function $ cc -shared -o CIEDE2000.so CIEDE2000.o
+jorge@jorge-desktop ~/dev/hwf/lionel/stock/lv-server-uni/src/server/db/c_function $ cc -I/usr/include/postgresql/9.3/server  -fpic -c CIEDE2000.c

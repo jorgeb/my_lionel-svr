@@ -51,6 +51,9 @@ export class Repository {
         console.log('findByExternalId',toSave);
         return this.db.any(sql.update, toSave);
       } else {
+        toSave.to_watch = false;
+        toSave.my_max_bid = 0;
+        toSave.my_wish = 0;
         return this.db.one(sql.add, toSave);
       }
 

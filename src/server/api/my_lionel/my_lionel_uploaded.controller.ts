@@ -62,9 +62,9 @@ export class MyLionelUploadedController {
                 stockImages:values[2],
                 noProcessed:values[2].filter((item) => {
                     return !values[0].some(si => {
-                        return si === item
+                        return si.image_url === item
                     }) && !values[1].some(si => {
-                        return si === item
+                        return si.image_url === item
                     });
                 })
             } 

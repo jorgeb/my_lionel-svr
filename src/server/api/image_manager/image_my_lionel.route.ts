@@ -7,7 +7,14 @@ const imageMyLionelRouter = Router();
 imageMyLionelRouter.get('/stock/:width/:height/:fileName', (req: Request, res: Response, next: Function) => {
 
   let imlc = new ImageMyLionelController(req, res, next);
-  return imlc.findStockImage();
+  return imlc.findStockImage(false);
+
+});
+
+imageMyLionelRouter.get('/stock-square/:width/:fileName', (req: Request, res: Response, next: Function) => {
+
+  let imlc = new ImageMyLionelController(req, res, next);
+  return imlc.findStockImage(true);
 
 });
 

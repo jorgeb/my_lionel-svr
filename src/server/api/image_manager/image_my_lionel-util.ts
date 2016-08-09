@@ -43,4 +43,34 @@ export class ImageMyLionelUtil {
             });
     };
 
+    public getSquareImage = (fileName: string, width: number) => {
+
+        let locFilename = fileName.replace('.jpg', '');
+
+        let origUrl = `${__dirname}/../../img/my_lionel/${locFilename}.jpg`;
+        let url = `${__dirname}/../../img/my_lionel_cache/${locFilename}_${width}__.jpg`;
+        let file = path.basename(url);
+
+        return new Promise(
+            (resolve: (str: any) => void, reject: (str: string) => void) => {
+
+                fs.exists(url, (exists) => {
+                    if (exists) {
+                        resolve(file);
+                    } else {
+
+                        let bufWidth = (width == 0) ? null : width;
+
+                        imagic(origUrl)
+                            .resize(bufWidth, bufWidth + '^')
+                            .gravity('Center')
+                            .extent(bufWidth, bufWidth, null)
+                            .write(url, function (err) {
+                            resolve(file);
+                        });
+                    }
+                });
+            });
+    };
+
 }

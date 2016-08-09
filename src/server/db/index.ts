@@ -8,8 +8,10 @@ import auctionItems = require('./repos/auction_items');
 import auctions = require('./repos/auctions');
 import lionelItems = require('./repos/lionel_items');
 import lionelTenders = require('./repos/lionel_tenders');
+import lionelSteamTenders = require('./repos/lionel_steam_tenders');
 import myLionelBoxes = require('./repos/my_boxes');
 import myLionelImages = require('./repos/my_lionel_images');
+import myLionelItems = require('./repos/my_lionel_items');
 
 interface IExtensions {
     users:users.Repository,
@@ -19,8 +21,10 @@ interface IExtensions {
     auctions:auctions.Repository,
     lionelItems:lionelItems.Repository,
     lionelTenders:lionelTenders.Repository,
+    lionelSteamTenders:lionelSteamTenders.Repository
     myLionelBoxes:myLionelBoxes.Repository,
-    myLionelImages:myLionelImages.Repository
+    myLionelImages:myLionelImages.Repository,
+    myLionelItems:myLionelItems.Repository
 }
 
 // pg-promise initialization options:
@@ -40,9 +44,11 @@ var options = {
         obj.auctions = new auctions.Repository(obj);
         obj.lionelItems = new lionelItems.Repository(obj);
         obj.lionelTenders = new lionelTenders.Repository(obj);
+        obj.lionelSteamTenders = new lionelSteamTenders.Repository(obj);
         obj.myLionelBoxes = new myLionelBoxes.Repository(obj);
         obj.myLionelImages = new myLionelImages.Repository(obj);
-        
+        obj.myLionelItems = new myLionelItems.Repository(obj);
+       
     }
 };
 

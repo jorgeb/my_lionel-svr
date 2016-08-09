@@ -49,7 +49,14 @@ export = {
     update: sql('lionel_items/update.sql')
   },
   lionelTenders:{
-    add: sql('lionel_tenders/add.sql')
+    add: sql('lionel_tenders/add.sql'),
+    addExtendedTender: sql('lionel_steam_tenders/add_my_extended_tender.sql'),
+    updateExtendedTender: sql('lionel_steam_tenders/update_my_extended_tender.sql'),
+    addAssoc: sql('lionel_steam_tenders/add_assoc.sql'),
+    
+  },
+  lionelTenderImages:{
+    addImage: sql('lionel_steam_tenders/add_image.sql')
   },
   auctionItems:{
     add: sql('auction_items/add.sql'),
@@ -76,6 +83,10 @@ export = {
   my_boxes: {
     update: sql('my_lionel/update_box.sql'),
     add: sql('my_lionel/add_box.sql')
+  },
+  my_lionel_items: {
+    update: sql('my_lionel/update_item.sql'),
+    add: sql('my_lionel/add_item.sql')
   }
 
 };

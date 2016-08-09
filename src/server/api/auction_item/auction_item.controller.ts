@@ -66,7 +66,7 @@ public favorites = () => {
   };
 
   public updateWatch = () => {
-console.log(this.req.params)
+
     return this.db.auctionItems.setWatch(this.req.params.id,
       this.req.params.watch).then(data => {
 
