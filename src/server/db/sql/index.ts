@@ -3,7 +3,7 @@ import {QueryFile} from 'pg-promise';
 // Helper for linking to external query files;
 function sql(file) {
 
-  var path = '/home/jorge/dev/hwf/lionel/stock/lv-server-uni/src/server/db/sql/' + file;
+  var path = __dirname + '/' + file;
 
   var options = {
 
